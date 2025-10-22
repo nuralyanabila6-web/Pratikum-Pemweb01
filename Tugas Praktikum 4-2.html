@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal Fulan — Berita Koding Lucu Tapi Keren 😎💻</title>
+    <meta
+      name="description"
+      content="Portal Fulan: berita koding lucu tapi keren. Di mana bug bukan musuh, tapi guru kehidupan."
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      :root {
+        --bg: #fcfeff;
+        --text: #222;
+        --primary: #355485;
+        --primary-2: #4f90c6;
+        --muted: #cbdde9;
+        --border: #ddd;
+        --table-head: #f1f5f9;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        margin: 0;
+        background-color: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      .skip-link:focus {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0.5rem 1rem;
+        background: #fff;
+        border: 2px solid var(--primary);
+      }
+
+      header {
+        background-color: var(--primary);
+        color: white;
+        text-align: center;
+        padding: 20px 12px;
+      }
+      header h1 {
+        margin: 0 0 0.25rem;
+        font-size: 28px;
+      }
+      header p {
+        margin: 0;
+        opacity: 0.95;
+      }
+
+      nav {
+        background-color: var(--primary-2);
+        padding: 10px 0;
+      }
+      nav .nav-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 5%;
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 6px 10px;
+        border-radius: 6px;
+      }
+      nav a:hover,
+      nav a:focus {
+        text-decoration: underline;
+        outline: none;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 16px;
+      }
+
+      main section,
+      aside {
+        background-color: white;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 16px;
+      }
+
+      #fakta-unik {
+        background: #d6e3ee;
+        border: 1px solid #b7cad9;
+        border-radius: 12px;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+        padding: 20px;
+        max-height: fit-content;
+      }
+
+      #fakta-unik h2 {
+        color: #355485;
+        font-weight: 800;
+        font-size: 28px;
+        line-height: 1.25;
+        margin: 0 0 12px;
+      }
+
+      #fakta-unik ul {
+        margin: 0 0 16px;
+        padding-left: 1.2rem;
+      }
+      #fakta-unik li {
+        margin-bottom: 10px;
+      }
+
+      #fakta-unik h3 {
+        margin: 4px 0 10px;
+        font-size: 22px;
+        color: #1f2f49;
+      }
+
+      #fakta-unik table {
+        margin-top: 8px;
+        border-collapse: collapse;
+        width: 100%;
+        background: transparent;
+      }
+
+      #fakta-unik th,
+      #fakta-unik td {
+        border: 1px solid #b7cad9;
+        padding: 10px 12px;
+        text-align: left;
+      }
+
+      #fakta-unik thead th {
+        background: #ffffff !important;
+        font-weight: 700;
+      }
+
+      #fakta-unik tbody tr,
+      #fakta-unik tbody td {
+        background: transparent !important;
+      }
+
+      #fakta-unik tbody tr:nth-child(even) {
+        background: transparent !important;
+      }
+
+      h2 {
+        color: var(--primary);
+        margin-top: 0;
+      }
+
+      article img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 6px;
+        margin: 0 auto 10px;
+        display: block;
+      }
+
+      figure {
+        margin: 0;
+      }
+      figcaption {
+        font-size: 0.9rem;
+        color: #555;
+        text-align: center;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 12px 0;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: var(--table-head);
+      }
+
+      article blockquote {
+        margin: 8px 0 16px;
+        padding: 12px 16px;
+        background: #eef5fc;
+        border-left: 6px solid #4f90c6;
+        border-radius: 4px;
+        color: #1f2f49;
+        font-style: normal;
+      }
+
+      iframe {
+        width: 100%;
+        height: 280px;
+        border: 1px solid #999;
+        border-radius: 6px;
+      }
+
+      footer {
+        background-color: var(--primary);
+        color: white;
+        text-align: center;
+        padding: 14px 12px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 28px 12px;
+      }
+
+      footer p {
+        margin: 2px 0;
+      }
+
+      footer p:last-child::after {
+        content: " — Semua bug milik bersama 🐞";
+      }
+      footer a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      #back-to-top {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 10px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      #back-to-top:hover {
+        background: rgba(255, 255, 255, 0.18);
+      }
+      #back-to-top::before {
+        content: "⬆";
+        font-size: 1rem;
+      }
+
+      @media (max-width: 900px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#berita-utama">Lewati ke konten utama</a>
+
+    <header id="top">
+      <h1>Portal Fulan — Berita Koding Lucu Tapi Keren 😎💻</h1>
+      <p>"Di mana bug bukan musuh, tapi guru kehidupan"</p>
+    </header>
+
+    <nav aria-label="Navigasi utama">
+      <div class="nav-container">
+        <a href="#berita-utama">Berita Utama</a>
+        <a href="#fakta-unik">Fakta Unik</a>
+        <a href="#video-iframe">Video &amp; Iframe</a>
+        <a href="#kontak-redaksi">Kontak Redaksi</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <main id="berita-utama">
+        <section aria-labelledby="judul-berita">
+          <h2 id="judul-berita">
+            Fulan Tertangkap Basah Ngoding Jam 3 Pagi Demi Push ke GitHub
+          </h2>
+          <article>
+            <figure>
+              <img
+                src="https://exampllee.vercel.app/assets/G07.gif"
+                alt="GIF lucu Fulan sedang ngoding larut malam"
+                style="width: 100%"
+              />
+            </figure>
+
+            <p>
+              <strong>Jakarta, Portal Fulan</strong> — Warga sekitar dikejutkan
+              dengan suara ketikan keyboard yang tak kunjung berhenti. Setelah
+              diselidiki, ternyata sumber suara berasal dari kamar Fulan yang
+              sedang men-deploy project-nya ke Vercel.
+            </p>
+            <p>
+              "Aku cuma mau pastiin web-nya responsif sebelum tidur," ujar Fulan
+              sambil menyeruput kopi dingin yang sudah cair dari jam 10 malam.
+            </p>
+            <p>
+              Menurut pengakuan saksi, Fulan sudah tiga malam tidak tidur
+              gara-gara memperbaiki error
+              <small>vite-plugin-pwa missing</small>. Namun akhirnya, project
+              berhasil jalan dan langsung mendapat 5 ⭐ di GitHub dari teman
+              satu kosnya.
+            </p>
+
+            <h3>Fakta Koding Fulan</h3>
+            <ul>
+              <li>Suka debugging sambil dengar musik anime 🎧</li>
+              <li>Pernah typo yang baru ketahuan saat deploy</li>
+              <li>Setiap error dianggap "ujian cinta terhadap sintaks"</li>
+            </ul>
+
+            <h3>Top 3 Error Paling Sering Ditemui</h3>
+            <ol>
+              <li>Missing semicolon (;) setelah jam 2 pagi</li>
+              <li>Path image tidak terbaca saat deploy</li>
+              <li>"Cannot read property 'undefined' of undefined" — klasik!</li>
+            </ol>
+
+            <h3>Daftar Konsumsi Lembur Fulan</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Menu</th>
+                  <th>Jam Konsumsi</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Kopi Tubruk</td>
+                  <td>22:00</td>
+                  <td>Habis</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Mie Goreng Instan</td>
+                  <td>00:30</td>
+                  <td>Pending (kegigit error)</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Roti Sobek</td>
+                  <td>02:00</td>
+                  <td>Belum Disentuh</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>Dan inilah motto hidupnya:</p>
+            <blockquote>
+              "Kalau koding gagal, bukan berarti kamu gagal. Mungkin cuma belum
+              di-save."
+            </blockquote>
+          </article>
+
+          <h2 id="video-iframe">Belajar HTML Langsung dari Sumbernya</h2>
+          <p>Berikut cuplikan referensi situs belajar favorit Fulan:</p>
+          <iframe
+            title="Petani Kode"
+            src="https://www.petanikode.com/"
+            loading="lazy"
+          ></iframe>
+        </section>
+      </main>
+
+      <aside id="fakta-unik" aria-labelledby="judul-fakta">
+        <h2 id="judul-fakta">Fakta Unik Tentang Fulan</h2>
+        <ul>
+          <li>Ngoding pakai mode gelap bahkan di siang bolong.</li>
+          <li>Punya 7 repository bernama <em>final-final-v3</em>.</li>
+          <li>Pernah rename folder jadi "fix-beneran-terakhir".</li>
+        </ul>
+
+        <h3>Jadwal Kegiatan Harian</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Waktu</th>
+              <th>Kegiatan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>06:30</td>
+              <td>Bangun, cek notifikasi CI/CD</td>
+            </tr>
+            <tr>
+              <td>09:00</td>
+              <td>Ngoding fitur baru</td>
+            </tr>
+            <tr>
+              <td>15:00</td>
+              <td>Code review & bug-fix</td>
+            </tr>
+            <tr>
+              <td>22:00</td>
+              <td>Deploy & monitoring</td>
+            </tr>
+          </tbody>
+        </table>
+      </aside>
+    </div>
+
+    <footer>
+      <p id="kontak-redaksi">
+        Kontak Redaksi:
+        <a href="mailto:redaksi@portalfulan.example"
+          >redaksi@portalfulan.example</a>
+          <br>
+      </p>
+              <a href="#top">⬆️ Kembali ke atas</a>
+      <p>© <span id="year"></span> Portal Fulan</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
